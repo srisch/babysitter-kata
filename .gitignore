@@ -1,0 +1,8 @@
+/packages
+/lib
+*/bin
+*/obj
+**/bin
+**/obj
+.idea*
+.vs*

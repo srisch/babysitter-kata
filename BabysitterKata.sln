@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{9A4A73EB-1794-4CE9-875A-4F93218A6FFC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BabysitterKata.Test", "BabysitterKata.Test\BabysitterKata.Test.csproj", "{B258EDCC-3969-415C-A294-4E677F80E428}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{FA5FBD0D-32F4-45CD-B64B-42E3829C4E98}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BabysitterKata.Lib", "BabysitterKata.Lib\BabysitterKata.Lib.csproj", "{A575AF94-DC6F-40A1-B25C-135269D6C596}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BabysitterKata.Cli", "BabysitterKata.Cli\BabysitterKata.Cli.csproj", "{AC4B2E25-755B-4DAD-B38B-CAA0BE2EE30E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B258EDCC-3969-415C-A294-4E677F80E428}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B258EDCC-3969-415C-A294-4E677F80E428}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B258EDCC-3969-415C-A294-4E677F80E428}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B258EDCC-3969-415C-A294-4E677F80E428}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A575AF94-DC6F-40A1-B25C-135269D6C596}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A575AF94-DC6F-40A1-B25C-135269D6C596}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A575AF94-DC6F-40A1-B25C-135269D6C596}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A575AF94-DC6F-40A1-B25C-135269D6C596}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AC4B2E25-755B-4DAD-B38B-CAA0BE2EE30E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC4B2E25-755B-4DAD-B38B-CAA0BE2EE30E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC4B2E25-755B-4DAD-B38B-CAA0BE2EE30E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC4B2E25-755B-4DAD-B38B-CAA0BE2EE30E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{B258EDCC-3969-415C-A294-4E677F80E428} = {9A4A73EB-1794-4CE9-875A-4F93218A6FFC}
+		{A575AF94-DC6F-40A1-B25C-135269D6C596} = {FA5FBD0D-32F4-45CD-B64B-42E3829C4E98}
+		{AC4B2E25-755B-4DAD-B38B-CAA0BE2EE30E} = {FA5FBD0D-32F4-45CD-B64B-42E3829C4E98}
+	EndGlobalSection
+EndGlobal
