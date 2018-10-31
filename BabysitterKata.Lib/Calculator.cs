@@ -2,14 +2,14 @@
 {
     public class Calculator
     {
-        public Calculator()
+         public Calculator()
         {
             grandTotal = 0;
         }
 
         public int grandTotal;
 
-        private static int Calculate(int hoursWorked, int hourlyRate)
+        public int Calculate(int hoursWorked, int hourlyRate)
         {
             return hourlyRate * hoursWorked;
         }
