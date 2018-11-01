@@ -36,7 +36,7 @@ namespace BabysitterKata.Test
         }
 
         [Fact]
-        public void Calculator_TheTotalAmountMadeAfterMidnight_ShouldReturnTheAmountMade()
+        public void Calculator_TheTotalAmountMadeAfterMidnight_ShouldReturnCorrectAmountMade()
         {
             var calculator = new Calculator();
             const int hoursAfterMidnight = 4;
@@ -44,17 +44,19 @@ namespace BabysitterKata.Test
             var afterMidnight = calculator.CalculateSubTotal(hoursAfterMidnight, (int) Rates.AfterMidnight);
             afterMidnight.Should().Be(expectedEarnings);
         }
-//
-//        [Fact]
-//        public void TotalBeforeMidnight()
-//        {
-//            const int hoursBeforeBed = 3;
-//            const int expectedEarnings = 68;
-//            const int hoursAfterBed = 4;
-//            var beforeBed = new Calculator(hoursBeforeBed, rateBeforeBedtime);
-//            var afterBed = new Calculator(hoursAfterBed, rateAfterBed);
-//            var actualEarnings = afterBed.Balance + beforeBed.Balance;
-//            Assert.Equal(actualEarnings, expectedEarnings);
-//        }
+
+        [Fact]
+        public void Calculator_TheTotalAmountMadeBeforeMidnight_ShouldReturnCorrectAmountMade()
+        {
+            var calculator = new Calculator();
+            const int hoursBeforeBed = 3;
+            const int hoursAfterBed = 4;
+            const int expectedEarnings = (int)Rates.BeforeBedtime * hoursBeforeBed + (int)Rates.AfterBedtime * hoursAfterBed;
+
+            var beforeBed = calculator.Calculate(hoursBeforeBed, (int) Rates.BeforeBedtime);
+            var afterBed = calculator.Calculate(hoursAfterBed,(int)Rates.AfterBedtime);
+            var actualEarnings = afterBed + beforeBed;
+            Assert.Equal(actualEarnings, expectedEarnings);
+        }
     }
 }
