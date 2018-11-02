@@ -56,7 +56,23 @@ namespace BabysitterKata.Test
             var beforeBed = calculator.Calculate(hoursBeforeBed, (int) Rates.BeforeBedtime);
             var afterBed = calculator.Calculate(hoursAfterBed,(int)Rates.AfterBedtime);
             var actualEarnings = afterBed + beforeBed;
-            Assert.Equal(actualEarnings, expectedEarnings);
+            actualEarnings.Should().Be(expectedEarnings);
+        }
+
+        [Fact]
+        public void Helpers_WhenPassingFloatAsAString_ShouldReturnZero()
+        {
+            const string mockInput = "1.5";
+            var converted = Helpers.CheckValue(mockInput);
+            converted.Should().Be(0);
+        }
+        
+        [Fact]
+        public void Helpers_WhenPassingAIntAsString_ShouldBeConvertedToInt()
+        {
+            const string mockInput = "5";
+            var converted = Helpers.CheckValue(mockInput);
+            converted.Should().NotBe(0);
         }
     }
 }
