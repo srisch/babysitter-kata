@@ -60,11 +60,11 @@ namespace BabysitterKata.Test
         }
 
         [Fact]
-        public void Helpers_WhenPassingFloatAsAString_ShouldReturnZero()
+        public void Helpers_WhenPassingDoubleAsAString_ShouldReturnOne()
         {
             const string mockInput = "1.5";
             var converted = Helpers.CheckValue(mockInput);
-            converted.Should().Be(0);
+            converted.Should().Be(1);
         }
         
         [Fact]

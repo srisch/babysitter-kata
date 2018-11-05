@@ -7,16 +7,27 @@ namespace BabysitterKata.Lib
     {
         public static int CheckValue(string hours)
         {
-            var i = 0;
-            var result = int.TryParse(hours, out i);
-            if (!result) return 0;
-                var local = changeToInt(hours);
-                return local;
+            var result = int.TryParse(hours, out _);
+            if (result)
+            {
+                return changeToInt(hours);
+            }
+            {
+                return parseDouble(hours);
+            }
+                
         }
 
         private static int changeToInt(string hours)
         {
             return Convert.ToInt32(hours);
+        }
+
+         private static int parseDouble(string hours)
+        {
+            double.TryParse(hours, out var x);
+            var local = Math.Floor(x);
+            return Convert.ToInt32(local);
         }
     }
 }
