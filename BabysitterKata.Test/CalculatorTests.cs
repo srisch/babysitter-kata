@@ -4,7 +4,7 @@ using Xunit;
 
 namespace BabysitterKata.Test
 {
-    public class CalculatorTest
+    public class CalculatorTests
     {
         private const int testHours = 1;
 
@@ -57,22 +57,6 @@ namespace BabysitterKata.Test
             var afterBed = calculator.Calculate(hoursAfterBed,(int)Rates.AfterBedtime);
             var actualEarnings = afterBed + beforeBed;
             actualEarnings.Should().Be(expectedEarnings);
-        }
-
-        [Fact]
-        public void Helpers_WhenPassingDoubleAsAString_ShouldReturnOne()
-        {
-            const string mockInput = "1.5";
-            var converted = Helpers.CheckValue(mockInput);
-            converted.Should().Be(1);
-        }
-        
-        [Fact]
-        public void Helpers_WhenPassingAIntAsString_ShouldBeConvertedToInt()
-        {
-            const string mockInput = "5";
-            var converted = Helpers.CheckValue(mockInput);
-            converted.Should().NotBe(0);
         }
     }
 }
