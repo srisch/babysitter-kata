@@ -6,16 +6,20 @@ namespace BabysitterKata.Lib
     {  
         public Prompt()
         {
-            DateTime date1 = new DateTime(2018, 1, 1, 5, 0,0,0);
-            DateTime date2 = new DateTime(2018, 1, 1, 6, 30,0,0);
-            TimeSpan interval = date2 - date1;
-            Console.WriteLine(interval.Hours);
+           
             
             var calculator = new Calculator();
             Console.WriteLine("Did you work past midnight?");
             Helpers.questionHandler(Console.ReadLine());
-            Console.WriteLine("How many hours did you work before bedtime?");
-            var workedBeforeBedtime = Helpers.CheckValue(Console.ReadLine());
+            Console.WriteLine("What time did you start? Enter 5:15 example");
+            var startTime = Time.ParseTime(Console.ReadLine());
+            
+            
+            Console.WriteLine("What time did the kids go to bed??");
+            var bedTime = Time.ParseTime(Console.ReadLine());
+
+            var workedBeforeBedtime = calculator.calculateTimeRange(startTime, bedTime);
+            
             calculator.CalculateSubTotal(workedBeforeBedtime, (int)Rates.BeforeBedtime);
             Console.WriteLine("How many hours did you work after bedtime? ");
             var workedAfterBedtime = Helpers.CheckValue(Console.ReadLine());
