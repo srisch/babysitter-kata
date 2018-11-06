@@ -21,5 +21,22 @@ namespace BabysitterKata.Test
             var converted = Helpers.CheckValue(testDouble);
             converted.Should().NotBe(0);
         }
+
+        [Fact]
+        public void Helpers_WhenAnsweringYesToWorkingAfterMidnight_ShouldReturnTrue()
+        {
+            const string UserAnswer = "Yes";
+            Helpers.questionHandler(UserAnswer);
+            Helpers.AfterMidnightAnswer.Should().BeTrue();
+        }
+        
+        [Fact]
+        public void Helpers_WhenAnsweringNoToWorkingAfterMidnight_ShouldReturnFalse()
+        {
+            const string UserAnswer = "No";
+            Helpers.questionHandler(UserAnswer);
+            Helpers.AfterMidnightAnswer.Should().BeFalse();
+        }
+        
     }
 }

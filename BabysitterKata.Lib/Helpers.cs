@@ -5,6 +5,7 @@ namespace BabysitterKata.Lib
     public static class Helpers
 
     {
+        public static bool AfterMidnightAnswer;
         public static int CheckValue(string hours)
         {
             var result = int.TryParse(hours, out _);
@@ -21,6 +22,19 @@ namespace BabysitterKata.Lib
             double.TryParse(hours, out var x);
             var local = Math.Floor(x);
             return Convert.ToInt32(local);
+        }
+
+        public static void questionHandler(string question)
+        {
+            if (question == "Yes")
+            {
+                AfterMidnightAnswer = true;
+            }
+            else
+            {
+               AfterMidnightAnswer = false;
+            }
+            
         }
     }
 }
