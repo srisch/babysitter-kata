@@ -31,11 +31,17 @@ namespace BabysitterKata.Lib
 
         public int calculateTimeRange(int start, int end)
         {
+            var day = 1;
             var date1 = new DateTime(2018, 1, 1, start, 0,0,0);
-            var date2 = new DateTime(2018, 1, 1, end, 0,0,0);
+            if (Helpers.AfterMidnightAnswer)
+            {
+                 day = 2;
+            }
+            var date2 = new DateTime(2018, day, 1, end, 0,0,0);
             var interval = date2 - date1;
             return interval.Hours;
         }
+
 
         public void CalculateTimeRangeExample(int hours, int rate)
         {

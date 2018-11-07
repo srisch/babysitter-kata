@@ -6,7 +6,6 @@ namespace BabysitterKata.Lib
     {  
         public Prompt()
         {
-           
             
             var calculator = new Calculator();
             Console.WriteLine("Did you work past midnight?");
@@ -17,16 +16,23 @@ namespace BabysitterKata.Lib
             
             Console.WriteLine("What time did the kids go to bed??");
             var bedTime = Time.ParseTime(Console.ReadLine());
-
             var workedBeforeBedtime = calculator.calculateTimeRange(startTime, bedTime);
-            
             calculator.CalculateSubTotal(workedBeforeBedtime, (int)Rates.BeforeBedtime);
-            Console.WriteLine("How many hours did you work after bedtime? ");
-            var workedAfterBedtime = Helpers.CheckValue(Console.ReadLine());
-            calculator.CalculateSubTotal(workedAfterBedtime, (int)Rates.AfterBedtime);
-            Console.WriteLine("How many hours did you work after midnight?");
-            var workedAfterMidnight = Helpers.CheckValue(Console.ReadLine());
-            calculator.CalculateSubTotal(workedAfterMidnight, (int)Rates.AfterMidnight);
+            
+            if (Helpers.AfterMidnightAnswer)
+            {
+                //Console.WriteLine("Late night! What time did you go home?");
+                //var workedAfterMidnight = Time.ParseTime(Console.ReadLine());
+                //var madeAfterMidnight = calculator.calculateTimeRange(something, workedAfterMidnight);
+                //calculator.CalculateSubTotal(madeAfterMidnight, (int)Rates.AfterMidnight);
+            }
+            {
+                Console.WriteLine("What time did you go home?");
+                var endOfNight = Helpers.CheckValue(Console.ReadLine());
+                var sample = calculator.calculateTimeRange(bedTime, endOfNight);
+                calculator.CalculateSubTotal(sample, (int) Rates.AfterBedtime);
+            }
+            
             var totalMade = calculator.grandTotal;
             Console.WriteLine("You made: $" + totalMade);
         }
